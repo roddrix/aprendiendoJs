@@ -1,0 +1,72 @@
+/*PALETA DE COLORES*/
+$color1 : #1B2430;
+$color2 : #51557E;
+$color3 : #816797;
+$color4 : #D6D5A8;
+
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: black;
+}
+.navbar{
+    background-color: $color1;
+    margin: 0px;
+    ul{
+        display: flex;
+        margin: 0px;
+        li{
+            list-style: none;
+            padding: 10px;
+            a{
+                font-family: "trispace";
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+            }
+        }
+    }   
+}
+
+.header {
+    background: $color2;
+    display: flex;
+    justify-content: end;
+    form{
+        width: 500px;
+        margin: 50px 200px 50px 0px;
+    }
+}
+
+.main{
+    div{
+        background-color: $color3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        h1{
+            color: $color4;
+        }
+        img{
+            width: 100%;
+        }
+        
+    }
+    .div2{
+        background-color: $color1;
+        h2{
+            color: $color3;
+        }
+        h3{
+            color:$color4
+        }
+    }
+
+}
+
+
+
+
