@@ -1,8 +1,13 @@
-/*PALETA DE COLORES*/
-$color1 : #1B2430;
-$color2 : #51557E;
-$color3 : #816797;
-$color4 : #D6D5A8;
+@import './variables';
+@import './mixins';
+
+// Hola ayelen, este es mi trabajo. lo que hice en este trabajo es crear "map" para la paleta de colores ( $palette ) y fui llamandola en los background-color. 
+// luego use "@extend" para copiar los estilos de textos ( .main/contenedorCajas/caja1 y caja2)
+// por ultimo cree un "@mixin" para ir posicionando distintos contenidos de un div (.contenedorCajas) 
+
+
+
+ 
 
 body{
     margin: 0px;
@@ -10,8 +15,11 @@ body{
     box-sizing: border-box;
     background-color: black;
 }
+
+
 .navbar{
-    background-color: $color1;
+    background-color: map-get($map: $palette , $key: 'color1');
+    justify-content:right;
     margin: 0px;
     ul{
         display: flex;
@@ -30,43 +38,85 @@ body{
 }
 
 .header {
-    background: $color2;
-    display: flex;
-    justify-content: end;
-    form{
-        width: 500px;
-        margin: 50px 200px 50px 0px;
-    }
+    background-color: map-get($map: $palette, $key: 'color2' );
+    display:flex;
+    width: 100%;
+    justify-content: center;
+        img{
+            width: 600px;
+            margin: 20px;
+        }
 }
+
+
+    
 
 .main{
     div{
-        background-color: $color3;
+        background-color: map-get($map: $palette , $key: 'color3');
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         padding: 50px;
-        h1{
-            color: $color4;
-        }
-        img{
-            width: 100%;
-        }
         
     }
-    .div2{
-        background-color: $color1;
-        h2{
-            color: $color3;
+
+    .contenedorCajas{
+        @include cajas (center);
+    
+        .caja1{
+            background-color: map-get($map: $palette, $key: 'color1');
+            color: map-get($map: $palette, $key:'color4' );
+            font-family: impact;
+            margin: 20px;
+           
         }
-        h3{
-            color:$color4
+        
+        .caja2{
+            @extend .caja1;
+            font-family: monospace ;
+            text-decoration: line-through;
         }
     }
 
-}
+    .contenedorCajas2{
+        @include cajas (left);
 
+        .caja1{
+            background-color: map-get($map: $palette, $key: 'color1');
+            color: map-get($map: $palette, $key:'color4' );
+            font-family: impact;
+            margin: 20px;
+           
+        }
+        
+        .caja2{
+            @extend .caja1;
+            font-family: monospace ;
+            text-decoration:overline;
+        }
+    }
+        
+
+   .contenedorCajas3{
+        @include cajas (right);
+
+            .caja1{
+                background-color: map-get($map: $palette, $key: 'color1');
+                color: map-get($map: $palette, $key:'color4' );
+                font-family: impact;
+                margin: 20px;
+            }
+        
+            .caja2{
+                @extend .caja1;
+                font-family: monospace ;
+                text-decoration:underline;
+            }    
+        }
+    
+}
 
 
 
