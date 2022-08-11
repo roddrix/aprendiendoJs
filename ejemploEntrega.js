@@ -5,12 +5,12 @@ const listaActividades = [
         horario: "18:00hs",
     },
     {
-        nombre: "Grupos de hombres y mujeres",
+        nombre: "GRUPOS",
         dia: "20 de agosto",
         horario: "18:30hs",
     },
     {
-        nombre: "Visita a Centro Comunitario Renuevo",
+        nombre: "VISITA A CCRENUEVO",
         dia: "27 de agosto",
         horario: "19:30hs",
     },
